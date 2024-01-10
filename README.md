@@ -4,9 +4,19 @@ This repository contains scripts and utilities for working with Azure services i
 
 ## Structure
 
-- `API-USAGE`: Contains PowerShell scripts for making API calls to various Azure services.
+- `azure-api`: Contains PowerShell scripts for making API calls to various Azure services.
 - `azure-cli`: Scripts for Azure Command Line Interface (CLI) usage examples.
 - `azure-devops-api`: PowerShell scripts for interacting with Azure DevOps APIs.
+- `load-environment-variables.ps1` : Powershell script to load environment variables from .env file.
+
+## Required variables in .env file
+To use all of scripts in this repo you .env file should contains variables, like on below example (customized for your azure environment):
+  ```.env
+  AZURE_CLIENT_ID=0fbde213-8cf9-4525-8f11-ca4e411173bb
+  AZURE_CLIENT_SECRET=aisnjdosakdnmaojs93u43rjaoi*HYFHS!!
+  AZURE_TENANT_ID=12ab52e2-7f12-4bef-awe4-3111962fc321
+  ADO_PAT=aisn*NWSB7da9n980um*93u43rjaoi*HYFHS!!
+  ```
 
 ## Azure API Usage
 
