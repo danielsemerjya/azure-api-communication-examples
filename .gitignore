@@ -1,1 +1,7 @@
 .env
+.terraform*
+terraform.tfstate
+*.pub
+*.tfvars
+!input.tfvars
+terraform.tfstate.backup
