@@ -1,14 +1,5 @@
-terraform {
-  required_providers {
-    azurerm = {
-      source  = "hashicorp/azurerm"
-      version = "3.86.0"
-    }
-  }
-}
-
-provider "azurerm" {
-  features {}
+data "http" "my_ip" {
+  url = "https://ifconfig.me/ip"
 }
 
 resource "azurerm_resource_group" "this" {
@@ -36,7 +27,7 @@ resource "azurerm_network_security_group" "this" {
     protocol                   = "Tcp"
     source_port_range          = "*"
     destination_port_range     = "*"
-    source_address_prefix      = var.allow_ip_adress
+    source_address_prefix      = data.http.my_ip.response_body
     destination_address_prefix = "*"
   }
 }
